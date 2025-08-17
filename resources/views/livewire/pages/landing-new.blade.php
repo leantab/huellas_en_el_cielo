@@ -84,7 +84,7 @@ $scrollToSection = function ($sectionId) {
     <!-- Fixed Action Buttons -->
     <div class="fixed bottom-6 right-6 z-40 flex flex-col space-y-3">
         <!-- Phone Button -->
-        <a href="tel:+1234567890"
+        <a href="tel:+541167667117"
             class="bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-110">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -94,7 +94,7 @@ $scrollToSection = function ($sectionId) {
         </a>
 
         <!-- WhatsApp Button -->
-        <a href="https://wa.me/1234567890" target="_blank"
+        <a href="https://wa.me/+541167667117" target="_blank"
             class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-110">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
