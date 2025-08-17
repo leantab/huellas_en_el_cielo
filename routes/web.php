@@ -6,8 +6,16 @@ use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.landing', [
+        'title' => 'Huellas en el Cielo - Servicios de Cremación para Mascotas'
+    ]);
 })->name('home');
+
+Route::get('/landing', function () {
+    return view('layouts.landing', [
+        'title' => 'Huellas en el Cielo - Servicios de Cremación para Mascotas'
+    ]);
+})->name('landing');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
