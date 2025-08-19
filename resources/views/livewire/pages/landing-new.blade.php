@@ -5,7 +5,6 @@ use function Livewire\Volt\{state};
 state(['isMenuOpen' => false]);
 
 $scrollToSection = function ($sectionId) {
-    $this->isMenuOpen = false;
     $this->dispatch('scroll-to-section', sectionId: $sectionId);
 };
 
@@ -13,7 +12,7 @@ $scrollToSection = function ($sectionId) {
 
 <div class="min-h-screen bg-gradient-to-br from-white to-indigo-200">
     <!-- Navigation Bar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-indigo-100/50">
+    <nav class="fixed top-0 left-0 right-0 z-50 text-white bg-indigo-600 backdrop-blur-sm border-b border-indigo-100/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
@@ -31,8 +30,8 @@ $scrollToSection = function ($sectionId) {
                             </div>
                         </div>
                         <div class="flex flex-col">
-                            <span class="text-xl font-serif font-bold text-indigo-700 leading-tight">HUELLAS</span>
-                            <span class="text-sm font-serif text-indigo-600 leading-tight">EN EL CIELO</span>
+                            <span class="text-xl font-serif font-bold text-white/90 leading-tight">HUELLAS</span>
+                            <span class="text-sm font-serif text-white/90 leading-tight">EN EL CIELO</span>
                         </div>
                     </div>
                 </div>
@@ -40,20 +39,20 @@ $scrollToSection = function ($sectionId) {
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#portada"
-                        class="text-indigo-600 hover:text-indigo-800 transition-colors duration-200 font-medium">Portada</a>
+                        class="text-white hover:text-gray-200 transition-colors duration-200 font-medium">Inicio</a>
                     <a href="#servicios"
-                        class="text-indigo-600 hover:text-indigo-800 transition-colors duration-200 font-medium">Servicios</a>
+                        class="text-white hover:text-gray-200 transition-colors duration-200 font-medium">Servicios</a>
                     <a href="#quienes-somos"
-                        class="text-indigo-600 hover:text-indigo-800 transition-colors duration-200 font-medium">Quienes
+                        class="text-white hover:text-gray-200 transition-colors duration-200 font-medium">Quienes
                         Somos</a>
                     <a href="#mision"
-                        class="text-indigo-600 hover:text-indigo-800 transition-colors duration-200 font-medium">Nuestra
+                        class="text-white hover:text-gray-200 transition-colors duration-200 font-medium">Nuestra
                         Misión</a>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button onclick="toggleMobileMenu()" class="text-indigo-600 hover:text-indigo-800 p-2">
+                    <button onclick="toggleMobileMenu()" class="text-white hover:text-grayo-200 p-2">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16"></path>
@@ -65,15 +64,15 @@ $scrollToSection = function ($sectionId) {
             <!-- Mobile Navigation Menu -->
             <div class="md:hidden" wire:ignore.self>
                 <div id="mobile-menu"
-                    class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-indigo-100/50 transition-all duration-300 ease-in-out overflow-hidden max-h-0 opacity-0">
-                    <a href="#portada" wire:click="scrollToSection('portada')"
-                        class="block px-3 py-2 text-indigo-600 hover:text-indigo-800 transition-colors duration-200 font-medium">Portada</a>
-                    <a href="#servicios" wire:click="scrollToSection('servicios')"
+                    class="absolute top-16 left-0 right-0 px-2 pt-2 pb-3 space-y-1 bg-white border-t border-indigo-100/50 transition-all duration-300 ease-in-out overflow-hidden max-h-0 opacity-0">
+                    <a href="#portada" wire:click="scrollToSection('portada')" onclick="toggleMobileMenu()"
+                        class="block px-3 py-2 text-indigo-600 hover:text-indigo-800 transition-colors duration-200 font-medium">Inicio</a>
+                    <a href="#servicios" wire:click="scrollToSection('servicios')" onclick="toggleMobileMenu()"
                         class="block px-3 py-2 text-indigo-600 hover:text-indigo-800 transition-colors duration-200 font-medium">Servicios</a>
-                    <a href="#quienes-somos" wire:click="scrollToSection('quienes-somos')"
+                    <a href="#quienes-somos" wire:click="scrollToSection('quienes-somos')" onclick="toggleMobileMenu()"
                         class="block px-3 py-2 text-indigo-600 hover:text-indigo-800 transition-colors duration-200 font-medium">Quienes
                         Somos</a>
-                    <a href="#mision" wire:click="scrollToSection('mision')"
+                    <a href="#mision" wire:click="scrollToSection('mision')" onclick="toggleMobileMenu()"
                         class="block px-3 py-2 text-indigo-600 hover:text-indigo-800 transition-colors duration-200 font-medium">Nuestra
                         Misión</a>
                 </div>
@@ -106,12 +105,12 @@ $scrollToSection = function ($sectionId) {
     <!-- Main Content -->
     <div class="pt-16">
         <!-- Portada Section -->
-        <section id="portada" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <section id="portada" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 mt-10">
             <div class="text-center max-w-4xl mx-auto">
                 <div class="mb-8">
-                    <div class="inline-flex items-center justify-center w-24 h-24 bg-indigo-100/50 rounded-full mb-6">
+                    <div class="inline-flex items-center justify-center w-24 h-24 rounded-full mb-6">
                         <img src="{{ asset('dog-paw-svgrepo-com.svg') }}" alt="Dog Paw Print Icon"
-                            class="w-18 h-18 text-indigo-600" style="fill: #4f39f6 ;">
+                            class="w-16 h-16 text-indigo-600" viewBox="0 0 24 24" style="fill: #4f39f6 ;">
                         {{-- <svg class="w-16 h-16 text-indigo-600" viewBox="0 0 24 24" fill="currentColor">
                             img
                         </svg> --}}
@@ -123,11 +122,14 @@ $scrollToSection = function ($sectionId) {
                         EN EL CIELO
                     </h2>
                     <div class="w-24 h-1 bg-indigo-300 mx-auto mb-8"></div>
+                    <h4 class="text-lg sm:text-xl text-indigo-800 mb-8 max-w-2xl mx-auto leading-relaxed">
+                        Tel: (+54) 11 6766-7117
+                    </h4>
                 </div>
 
                 <p class="text-lg sm:text-xl text-indigo-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-                    Brindamos un servicio de cremación digno y respetuoso para las mascotas que han partido,
-                    honrando el amor y la compañía que nos dieron durante su vida.
+                    Brindamos un servicio integral de retiro, traslado y cremación profesional y respetuoso para las
+                    mascotas que han partido, honrando el amor y la compañía que nos dieron durante su vida.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -149,65 +151,94 @@ $scrollToSection = function ($sectionId) {
                 <div class="text-center mb-16">
                     <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-800 mb-4">Nuestros Servicios</h2>
                     <div class="w-24 h-1 bg-indigo-300 mx-auto mb-6"></div>
-                    <p class="text-lg text-indigo-600 max-w-2xl mx-auto">
-                        Ofrecemos servicios integrales de cremación con la máxima dignidad y respeto
-                    </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Servicio 1 -->
                     <div
-                        class="bg-white p-8 rounded-xl shadow-lg border border-indigo-100/50 hover:shadow-xl transition-shadow duration-300">
+                        class="bg-white p-8 rounded-xl shadow-lg border border-indigo-400 hover:shadow-xl transition-shadow duration-300">
                         <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                             <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                                </path>
+                                    d="M3 10l9-7 9 7" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 10v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V10" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 22v-6h4v6" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4 text-center">Cremación
-                            Individual
+                        <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4 text-center">Retiro a
+                            domicilio
                         </h3>
                         <p class="text-indigo-600 text-center leading-relaxed">
-                            Cremación individual garantizada para tu mascota, con entrega de cenizas en urna
-                            personalizada.
+                            Retiro de tu mascota en el momento de su muerte, con la máxima discreción y respeto.
                         </p>
                     </div>
 
                     <!-- Servicio 2 -->
                     <div
-                        class="bg-white p-8 rounded-xl shadow-lg border border-indigo-100/50 hover:shadow-xl transition-shadow duration-300">
+                        class="bg-white p-8 rounded-xl shadow-lg border border-indigo-400 hover:shadow-xl transition-shadow duration-300">
                         <div
                             class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                             <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    d="M3 13h11v5H3z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 13h4l2 2v3h-6z" />
+                                <circle cx="7.5" cy="18" r="1.5" stroke="currentColor" stroke-width="2"
+                                    fill="none" />
+                                <circle cx="17.5" cy="18" r="1.5" stroke="currentColor" stroke-width="2"
+                                    fill="none" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4 text-center">Recogida a
-                            Domicilio</h3>
+                        <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4 text-center">Traslado al
+                            Crematorio Privado</h3>
                         <p class="text-indigo-600 text-center leading-relaxed">
-                            Servicio de recogida en tu hogar con la máxima discreción y respeto por tu dolor.
+                            Traslado de tu mascota al crematorio privado, con la máxima discreción y respeto.
                         </p>
                     </div>
 
                     <!-- Servicio 3 -->
                     <div
-                        class="bg-white p-8 rounded-xl shadow-lg border border-indigo-100/50 hover:shadow-xl transition-shadow duration-300">
+                        class="bg-white p-8 rounded-xl shadow-lg border border-indigo-400 hover:shadow-xl transition-shadow duration-300">
+                        <div
+                            class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <rect x="6" y="4" width="12" height="16" rx="2" ry="2"
+                                    stroke-width="2" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 13l2 2 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4 text-center">Entrega de
+                            Certificado de Cremación</h3>
+                        <p class="text-indigo-600 text-center leading-relaxed">
+                            Documentación oficial y certificados de cremación para tu tranquilidad y recuerdo.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 4 -->
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-lg border border-indigo-400 hover:shadow-xl transition-shadow duration-300">
                         <div
                             class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                             <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
-                                </path>
+                                    d="M9 4h6v2H9z" />
+                                <rect x="7" y="8" width="10" height="10" rx="2" ry="2"
+                                    stroke-width="2" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 12h4" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4 text-center">Certificados</h3>
+                        <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4 text-center">Entrega de
+                            Devolución de cenizas en urna conmemorativa</h3>
                         <p class="text-indigo-600 text-center leading-relaxed">
-                            Documentación oficial y certificados de cremación para tu tranquilidad y recuerdo.
+                            Devolución de cenizas en urna conmemorativa, para que puedas tener un recuerdo tangible
+                            de tu mascota.
                         </p>
                     </div>
                 </div>
@@ -221,24 +252,25 @@ $scrollToSection = function ($sectionId) {
                     <div>
                         <h2 class="text-3xl sm:text-4xl font-serif font-bold text-indigo-800 mb-6">Quienes Somos</h2>
                         <div class="w-24 h-1 bg-indigo-300 mb-8"></div>
-                        <p class="text-lg text-indigo-600 mb-6 leading-relaxed">
-                            Somos una empresa familiar con más de 15 años de experiencia en el cuidado y respeto
-                            hacia las mascotas que han partido. Entendemos que cada mascota es única y especial.
+                        <p class="text-lg text-indigo-800 mb-6 leading-relaxed">
+                            Somos una empresa familiar con más de 10 años de experiencia en el cuidado y respeto hacia
+                            los animalitos que han partido. Sabemos que cada mascota es única y especial, por eso
+                            brindamos un trato personalizado en cada caso.
                         </p>
-                        <p class="text-lg text-indigo-600 mb-6 leading-relaxed">
-                            Nuestro equipo está formado por profesionales comprometidos con brindar un servicio
-                            digno y compasivo durante los momentos más difíciles para las familias.
+                        <p class="text-lg text-indigo-800 mb-6 leading-relaxed">
+                            Nuestro equipo está formado por profesionales comprometidos con ayudar y acompañar
+                            respetuosamente a las personas en estos momentos difíciles.
                         </p>
                         <div class="flex items-center space-x-4">
                             <div class="flex items-center space-x-2">
-                                <div class="w-3 h-3 bg-indigo-600 rounded-full"></div>
-                                <span class="text-indigo-700 font-medium">15+ años de experiencia</span>
+                                <div class="w-3 h-3 bg-indigo-800 rounded-full"></div>
+                                <span class="text-indigo-800 font-medium">15+ años de experiencia</span>
                             </div>
                         </div>
                         <div class="flex items-center space-x-4 mt-3">
                             <div class="flex items-center space-x-2">
-                                <div class="w-3 h-3 bg-indigo-600 rounded-full"></div>
-                                <span class="text-indigo-700 font-medium">Miles de familias atendidas</span>
+                                <div class="w-3 h-3 bg-indigo-800 rounded-full"></div>
+                                <span class="text-indigo-800 font-medium">Miles de familias atendidas</span>
                             </div>
                         </div>
                     </div>
@@ -258,8 +290,8 @@ $scrollToSection = function ($sectionId) {
                                 <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4">Nuestro Compromiso
                                 </h3>
                                 <p class="text-indigo-600 leading-relaxed">
-                                    Tratamos a cada mascota como si fuera nuestra propia familia,
-                                    con el amor y respeto que se merecen.
+                                    Tratamos a cada mascota como si fuera nuestra propia familia, con el amor y respeto
+                                    que se merecen.
                                 </p>
                             </div>
                         </div>
@@ -287,9 +319,10 @@ $scrollToSection = function ($sectionId) {
                                 </path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4">Dignidad</h3>
+                        <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4">Empatía</h3>
                         <p class="text-indigo-600">
-                            Tratar a cada mascota con el respeto y dignidad que merece
+                            Amamos a los animales y entendemos que son una parte muy importante de la vida, así como un
+                            integrante más de la familia.
                         </p>
                     </div>
 
@@ -304,7 +337,7 @@ $scrollToSection = function ($sectionId) {
                         </div>
                         <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4">Compasión</h3>
                         <p class="text-indigo-600">
-                            Brindar apoyo emocional a las familias en su momento de dolor
+                            Tratar a cada mascota con el respeto y cuidado que merece
                         </p>
                     </div>
 
@@ -326,10 +359,9 @@ $scrollToSection = function ($sectionId) {
 
                 <div class="text-center">
                     <p class="text-lg text-indigo-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                        Nuestra misión es proporcionar un servicio de cremación que honre la memoria de tu mascota
-                        y te ayude a encontrar paz en estos momentos difíciles. Creemos que cada mascota deja
-                        huellas imborrables en nuestros corazones, y es nuestro deber honrar esas huellas con
-                        respeto y amor.
+                        Nuestra misión es proporcionar un servicio que honre la memoria de tu mascota y te ayude a
+                        encontrar alivio en estos momentos difíciles. Creemos que cada mascota deja huellas imborrables
+                        en nuestros corazones, y es nuestro deber honrar su recuerdo con respeto y amor.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -371,11 +403,11 @@ $scrollToSection = function ($sectionId) {
                     </div>
                 </div>
                 <p class="text-blue-200 mb-6">
-                    Honrando la memoria de tus mascotas con amor y respeto
+                    Honrando la memoria de tus mascotas
                 </p>
                 <div class="border-t border-blue-700 pt-6">
                     <p class="text-blue-300 text-sm">
-                        © 2024 Huellas en el Cielo. Todos los derechos reservados.
+                        © 2023 Huellas en el Cielo. Todos los derechos reservados.
                     </p>
                 </div>
             </div>
@@ -392,14 +424,36 @@ $scrollToSection = function ($sectionId) {
                     // Cerrar el menú móvil si está abierto
                     closeMobileMenu();
 
-                    // Scroll suave a la sección
-                    element.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    // Scroll suave a la sección con control de duración
+                    const navbar = document.querySelector('nav');
+                    const offset = navbar ? navbar.offsetHeight : 0;
+                    const targetY = element.getBoundingClientRect().top + window.pageYOffset - offset;
+                    smoothScrollTo(targetY, 1200);
                 }
             });
         });
+
+        // Animación de scroll personalizada con easing y duración controlada
+        function smoothScrollTo(targetY, duration = 1200) {
+            const startY = window.pageYOffset;
+            const distanceY = targetY - startY;
+            let startTime = null;
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = easeInOutQuad(progress);
+                window.scrollTo(0, startY + distanceY * eased);
+                if (elapsed < duration) requestAnimationFrame(step);
+            }
+
+            requestAnimationFrame(step);
+        }
+
+        function easeInOutQuad(t) {
+            return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 1, 2) / 2;
+        }
 
         // Función para abrir/cerrar el menú móvil
         function toggleMobileMenu() {

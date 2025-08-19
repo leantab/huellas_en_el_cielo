@@ -68,7 +68,7 @@ new class extends Component {
 
             <!-- Mobile Navigation Menu -->
             <div class="md:hidden" wire:ignore.self>
-                <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-blue-100/50 transition-all duration-300 ease-in-out overflow-hidden"
+                <div class="absolute top-16 left-0 right-0 px-2 pt-2 pb-3 space-y-1 bg-white border-t border-blue-100/50 transition-all duration-300 ease-in-out overflow-hidden"
                     style="max-height: {{ $isMenuOpen ? '200px' : '0px' }}; opacity: {{ $isMenuOpen ? '1' : '0' }};">
                     <a href="#portada" wire:click="scrollToSection('portada')"
                         class="block px-3 py-2 text-blue-700 hover:text-blue-900 transition-colors duration-200 font-medium">Portada</a>
@@ -387,14 +387,36 @@ new class extends Component {
                     // Cerrar el menú móvil si está abierto
                     @this.set('isMenuOpen', false);
 
-                    // Scroll suave a la sección
-                    element.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    // Scroll suave a la sección con control de duración
+                    const navbar = document.querySelector('nav');
+                    const offset = navbar ? navbar.offsetHeight : 0;
+                    const targetY = element.getBoundingClientRect().top + window.pageYOffset - offset;
+                    smoothScrollTo(targetY, 1200);
                 }
             });
         });
+
+        // Animación de scroll personalizada con easing y duración controlada
+        function smoothScrollTo(targetY, duration = 1200) {
+            const startY = window.pageYOffset;
+            const distanceY = targetY - startY;
+            let startTime = null;
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = easeInOutQuad(progress);
+                window.scrollTo(0, startY + distanceY * eased);
+                if (elapsed < duration) requestAnimationFrame(step);
+            }
+
+            requestAnimationFrame(step);
+        }
+
+        function easeInOutQuad(t) {
+            return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 1, 2) / 2;
+        }
 
         // Cerrar menú móvil al hacer click fuera de él
         document.addEventListener('click', function(event) {
