@@ -165,7 +165,7 @@ $scrollToSection = function ($sectionId) {
                             domicilio
                         </h3>
                         <p class="text-indigo-600 text-center leading-relaxed">
-                            Acompañamiento discreto y respetuoso para la recogida de tu mascota en el momento de su
+                            Acompañamiento discreto y respetuoso para el retiro de tu mascota en el momento de su
                             partida.
                         </p>
                     </div>
@@ -208,7 +208,10 @@ $scrollToSection = function ($sectionId) {
                             por choferes profesionales del rubro funerario.
                         </p>
                     </div>
+                </div>
 
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center w-fit mx-auto mt-6">
                     <!-- Servicio 4 -->
                     <div
                         class="bg-white w-full max-w-sm mx-auto p-8 rounded-xl shadow-lg border border-indigo-400 hover:shadow-xl transition-shadow duration-300">
