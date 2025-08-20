@@ -122,9 +122,10 @@ $scrollToSection = function ($sectionId) {
                         EN EL CIELO
                     </h2>
                     <div class="w-24 h-1 bg-indigo-300 mx-auto mb-8"></div>
-                    <h4 class="text-lg sm:text-xl text-indigo-800 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    <h2
+                        class="text-xl sm:text-xl font-sans font-semibold text-indigo-800 mb-8 max-w-2xl mx-auto leading-relaxed">
                         Tel: (+54) 11 6766-7117
-                    </h4>
+                    </h2>
                 </div>
 
                 <p class="text-lg sm:text-xl text-indigo-600 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -153,32 +154,39 @@ $scrollToSection = function ($sectionId) {
                     <div class="w-24 h-1 bg-indigo-300 mx-auto mb-6"></div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center w-fit mx-auto">
                     <!-- Servicio 1 -->
                     <div
-                        class="bg-white p-8 rounded-xl shadow-lg border border-indigo-400 hover:shadow-xl transition-shadow duration-300">
+                        class="bg-white w-full max-w-sm mx-auto p-8 rounded-xl shadow-lg border border-indigo-400 hover:shadow-xl transition-shadow duration-300">
                         <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 10l9-7 9 7" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 10v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V10" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 22v-6h4v6" />
-                            </svg>
+                            <flux:icon.home variant="solid" class="w-8 h-8 text-indigo-600" />
                         </div>
                         <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4 text-center">Retiro a
                             domicilio
                         </h3>
                         <p class="text-indigo-600 text-center leading-relaxed">
-                            Retiro de tu mascota en el momento de su muerte, con la máxima discreción y respeto.
+                            Acompañamiento discreto y respetuoso para la recogida de tu mascota en el momento de su
+                            partida.
                         </p>
                     </div>
 
                     <!-- Servicio 2 -->
                     <div
-                        class="bg-white p-8 rounded-xl shadow-lg border border-indigo-400 hover:shadow-xl transition-shadow duration-300">
+                        class="bg-white w-full max-w-sm mx-auto p-8 rounded-xl shadow-lg border border-indigo-400 hover:shadow-xl transition-shadow duration-300">
+                        <div
+                            class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <flux:icon.moon variant="solid" class="w-8 h-8 text-indigo-600" />
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4 text-center">Resguardo
+                        </h3>
+                        <p class="text-indigo-600 text-center leading-relaxed">
+                            Resguardo y almacenamiento en cámara frigorífica, con el máximo cuidado.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div
+                        class="bg-white w-full max-w-sm mx-auto p-8 rounded-xl shadow-lg border border-indigo-400 hover:shadow-xl transition-shadow duration-300">
                         <div
                             class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                             <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor"
@@ -196,33 +204,28 @@ $scrollToSection = function ($sectionId) {
                         <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4 text-center">Traslado al
                             Crematorio Privado</h3>
                         <p class="text-indigo-600 text-center leading-relaxed">
-                            Traslado de tu mascota al crematorio privado, con la máxima discreción y respeto.
-                        </p>
-                    </div>
-
-                    <!-- Servicio 3 -->
-                    <div
-                        class="bg-white p-8 rounded-xl shadow-lg border border-indigo-400 hover:shadow-xl transition-shadow duration-300">
-                        <div
-                            class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <rect x="6" y="4" width="12" height="16" rx="2" ry="2"
-                                    stroke-width="2" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 13l2 2 4-4" />
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4 text-center">Entrega de
-                            Certificado de Cremación</h3>
-                        <p class="text-indigo-600 text-center leading-relaxed">
-                            Documentación oficial y certificados de cremación para tu tranquilidad y recuerdo.
+                            Traslado de tu mascota al crematorio privado en unidades sanitarias conducidas
+                            por choferes profesionales del rubro funerario.
                         </p>
                     </div>
 
                     <!-- Servicio 4 -->
                     <div
-                        class="bg-white p-8 rounded-xl shadow-lg border border-indigo-400 hover:shadow-xl transition-shadow duration-300">
+                        class="bg-white w-full max-w-sm mx-auto p-8 rounded-xl shadow-lg border border-indigo-400 hover:shadow-xl transition-shadow duration-300">
+                        <div
+                            class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <flux:icon.check-badge class="w-8 h-8 text-indigo-600 " />
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4 text-center">Entrega de
+                            Certificado de Cremación</h3>
+                        <p class="text-indigo-600 text-center leading-relaxed">
+                            Documentación oficial y certificados de cremación para tu tranquilidad y confianza.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 5 -->
+                    <div
+                        class="bg-white w-full max-w-sm mx-auto p-8 rounded-xl shadow-lg border border-indigo-400 hover:shadow-xl transition-shadow duration-300">
                         <div
                             class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                             <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor"
@@ -234,11 +237,11 @@ $scrollToSection = function ($sectionId) {
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 12h4" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4 text-center">Entrega de
-                            Devolución de cenizas en urna conmemorativa</h3>
+                        <h3 class="text-xl font-serif font-semibold text-indigo-800 mb-4 text-center">Devolución de
+                            cenizas</h3>
                         <p class="text-indigo-600 text-center leading-relaxed">
-                            Devolución de cenizas en urna conmemorativa, para que puedas tener un recuerdo tangible
-                            de tu mascota.
+                            Devolución de cenizas en urna conmemorativa, para que puedas atesorar por siempre su
+                            compañía.
                         </p>
                     </div>
                 </div>
@@ -261,18 +264,6 @@ $scrollToSection = function ($sectionId) {
                             Nuestro equipo está formado por profesionales comprometidos con ayudar y acompañar
                             respetuosamente a las personas en estos momentos difíciles.
                         </p>
-                        <div class="flex items-center space-x-4">
-                            <div class="flex items-center space-x-2">
-                                <div class="w-3 h-3 bg-indigo-800 rounded-full"></div>
-                                <span class="text-indigo-800 font-medium">15+ años de experiencia</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-4 mt-3">
-                            <div class="flex items-center space-x-2">
-                                <div class="w-3 h-3 bg-indigo-800 rounded-full"></div>
-                                <span class="text-indigo-800 font-medium">Miles de familias atendidas</span>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="relative">
