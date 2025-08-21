@@ -1,0 +1,38 @@
+{
+    "name": "Huellas en el Cielo - Cremación de Mascotas",
+    "short_name": "Huellas en el Cielo",
+    "description": "Servicios profesionales de cremación de mascotas en Argentina",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4f39f6",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "es-AR",
+    "categories": ["business", "health", "lifestyle"],
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "16x16 32x32",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "/favicon2.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/huellas.jpg",
+            "sizes": "1200x630",
+            "type": "image/jpeg",
+            "form_factor": "wide"
+        }
+    ]
+}

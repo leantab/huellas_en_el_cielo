@@ -1,2 +1,59 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: /sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all important directories
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
+
+# Disallow admin and system files
+Disallow: /admin/
+Disallow: /storage/
+Disallow: /vendor/
+Disallow: /node_modules/
+Disallow: /tests/
+Disallow: /database/
+Disallow: /config/
+Disallow: /bootstrap/
+Disallow: /app/
+Disallow: /resources/
+Disallow: /routes/
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /vite.config.js
+Disallow: /phpunit.xml
+Disallow: /artisan
+Disallow: /.env
+Disallow: /.git/
+Disallow: /.github/
+
+# Allow search engines to index all content
+Allow: /landing
+Allow: /cremacion-mascotas
+Allow: /settings
+Allow: /login
+Allow: /register
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Specific rules for DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1

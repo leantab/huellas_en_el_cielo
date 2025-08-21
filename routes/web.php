@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SitemapController;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -16,6 +17,12 @@ Route::get('/landing', function () {
         'title' => 'Huellas en el Cielo - Servicios de Cremación para Mascotas'
     ]);
 })->name('landing');
+
+Route::get('/cremacion-mascotas', function () {
+    return view('layouts.cremacion-mascotas');
+})->name('cremacion-mascotas');
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
