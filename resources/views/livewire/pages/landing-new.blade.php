@@ -359,7 +359,7 @@ $scrollToSection = function ($sectionId) {
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="tel:+1234567890"
+                        <a href="tel:+541167667117"
                             class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 inline-flex items-center justify-center">
                             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -368,7 +368,7 @@ $scrollToSection = function ($sectionId) {
                             </svg>
                             Llamar Ahora
                         </a>
-                        <a href="https://wa.me/1234567890" target="_blank"
+                        <a href="https://wa.me/+541167667117" target="_blank"
                             class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 inline-flex items-center justify-center">
                             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path
